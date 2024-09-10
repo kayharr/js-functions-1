@@ -1,34 +1,31 @@
-var startMyDay = function () {
-    return "Time for coffee and a shower!";
-};
+var hobbies = ["disc golfing", "mixology", "reading", "dancing", "crocheting", "baking"];
 
-console.log(startMyDay());
+// console.log(hobbies.length);
+hobbies.push("playing Dungeons & Dragons");
 
+// console.log(hobbies[2]);
+hobbies.pop();
+// console.log(hobbies);
+hobbies.splice(2,0, "running", "flying");
+// console.log(hobbies);
+hobbies.shift();
+hobbies.unshift("tennis");
+// console.log(hobbies);
 
-var favoriteCookie = function (cookie) {
-    return `My favorite cookie is ${cookie}`;
-};
+var goals = ["exercising", "needleworking", "reading history books"];
+// console.log(goals);
 
-console.log(favoriteCookie("oatmeal raisin"));
+var allTheThings = hobbies.concat(goals);
+// console.log(allTheThings);
 
+var num = allTheThings.indexOf("dancing");
+// console.log(num);
 
-var introduce = function (name, occupation) {
-    return `My name is ${name} and I am a ${occupation}.`;
-};
+allTheThings.splice(5,1);
+// console.log(allTheThings);
 
-console.log(introduce("Kayla", "buying assistant"));
-console.log(introduce("Josh", "CISO"));
+var plans = allTheThings.map(function(item){
+    return `I can't wait to start ${item}.`;
+});
 
-
-var hydrationFeedback = function () {
-    var numGlasses = Number(
-        prompt("How many glasses of water did you have today?")
-    );
-    if (numGlasses >= 8) {
-        console.log("Amazing! You must feel good.");
-    } else if (numGlasses < 8) {
-        console.log("Not bad, not bad. Let's try for a bit more tomorrow.");
-    };
-};
-
-hydrationFeedback();
+console.log(plans);
